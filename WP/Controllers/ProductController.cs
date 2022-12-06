@@ -17,12 +17,14 @@ namespace WP.Controllers
 {
     public class ProductController : Controller
     {
-        WebAppContext _context = new WebAppContext();
+        
+        readonly private WebAppContext _context;
         private readonly IWebHostEnvironment _hostEnvironment;
 
-        public ProductController(IWebHostEnvironment hostEnvironment)
+        public ProductController(IWebHostEnvironment hostEnvironment, WebAppContext context)
         {
             _hostEnvironment = hostEnvironment;
+            _context = context;
         }
 
         // GET: /<controller>/
