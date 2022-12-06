@@ -8,12 +8,16 @@ namespace WP.Models
 {
     public class WebAppContext: IdentityDbContext<IdentityUser>
     {
+        public WebAppContext(DbContextOptions<WebAppContext> options) : base(options)
+        {
+
+        }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=localhost,1433;Database=Crud;User=SA;Password=MyPassword123#;Trusted_Connection=false;Encrypt=false;");
-        }
+        public DbSet<User> users { get; set; }
+        
+            
+        
     }
 }
 

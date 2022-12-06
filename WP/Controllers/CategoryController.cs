@@ -13,9 +13,12 @@ namespace WP.Controllers
 {
     public class CategoryController : Controller
     {
-        WebAppContext _context = new WebAppContext();
+        readonly private WebAppContext _context ;
 
-
+        public CategoryController(WebAppContext context)
+        {
+            _context = context;
+        }
 
         public async Task<IActionResult> Index()
         {

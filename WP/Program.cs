@@ -1,9 +1,21 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using WP.Models;
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'WebAppContextConnection' not found.");
+
+builder.Services.AddDbContext<WebAppContext>(options =>
+    options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<IdentityUser>()
+    .AddEntityFrameworkStores<WebAppContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-
+builder.Services.AddDbContext<WebAppContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConnection")
+));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -18,8 +30,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();;
+app.MapRazorPages();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",
