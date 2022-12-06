@@ -3815,24 +3815,31 @@
     ]
   },
   "packageFolders": {
-    "/Users/root1/.nuget/packages/": {}
+    "C:\\Users\\Aytug\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/root1/Projects/WP/WP/WP.csproj",
+      "projectUniqueName": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\WP.csproj",
       "projectName": "WP",
-      "projectPath": "/Users/root1/Projects/WP/WP/WP.csproj",
-      "packagesPath": "/Users/root1/.nuget/packages/",
-      "outputPath": "/Users/root1/Projects/WP/WP/obj/",
+      "projectPath": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\WP.csproj",
+      "packagesPath": "C:\\Users\\Aytug\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/root1/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Aytug\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3903,7 +3910,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
