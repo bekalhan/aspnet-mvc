@@ -1,24 +1,25 @@
 ﻿<Properties StartupConfiguration="{8330D629-07A2-4653-B596-94394DA21FC6}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WP PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WP/Program.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BackUp/Controllers/CategoryController.json">
     <Files>
-      <File FileName="WP/Controllers/CategoryController.cs" Line="68" Column="33" />
-      <File FileName="WP/Controllers/ProductController.cs" Line="99" Column="47" />
+      <File FileName="WP/Controllers/CategoryController.cs" />
+      <File FileName="WP/Controllers/ProductController.cs" />
       <File FileName="WP/Controllers/HomeController.cs" />
-      <File FileName="WP/Models/Category.cs" Line="1" Column="1" />
-      <File FileName="WP/Models/Product.cs" Line="17" Column="25" />
-      <File FileName="WP/Models/WebAppContext.cs" Line="9" Column="47" />
+      <File FileName="WP/Models/Category.cs" />
+      <File FileName="WP/Models/Product.cs" />
+      <File FileName="WP/Models/WebAppContext.cs" />
       <File FileName="WP/Views/Category/Create.cshtml" />
-      <File FileName="WP/Views/Category/Index.cshtml" Line="32" Column="33" />
+      <File FileName="WP/Views/Category/Index.cshtml" />
       <File FileName="WP/Views/Category/Delete.cshtml" />
-      <File FileName="WP/Views/Category/Edit.cshtml" Line="9" Column="1" />
+      <File FileName="WP/Views/Category/Edit.cshtml" />
       <File FileName="WP/Views/Category/View.cshtml" />
-      <File FileName="WP/Views/Product/Create.cshtml" Line="34" Column="1" />
-      <File FileName="WP/Views/Product/Index.cshtml" Line="57" Column="57" />
-      <File FileName="WP/Program.cs" Line="27" Column="1" />
-      <File FileName="WP/Views/Shared/_Layout.cshtml" Line="21" Column="31" />
-      <File FileName="WP/wwwroot/css/sidebar.css" Line="11476" Column="25" />
+      <File FileName="WP/Views/Product/Create.cshtml" />
+      <File FileName="WP/Views/Product/Index.cshtml" />
+      <File FileName="WP/Program.cs" />
+      <File FileName="WP/Views/Shared/_Layout.cshtml" />
+      <File FileName="WP/wwwroot/css/sidebar.css" />
       <File FileName="WP/wwwroot/js/main.js" />
       <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Controllers/ProductController.cs" />
       <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Controllers/CategoryController.cs" />
@@ -28,68 +29,51 @@
       <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Views/Category/Index.cshtml" />
       <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Views/Product/Create.cshtml" />
       <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Views/Product/Index.cshtml" />
-      <File FileName="WP/Views/Shared/_Navbar.cshtml" Line="4" Column="60" />
+      <File FileName="WP/Views/Shared/_Navbar.cshtml" />
       <File FileName="WP/obj/Debug/net6.0/WP.AssemblyInfo.cs" />
-      <File FileName="WP/Views/Shared/_StylesFiles.cshtml" Line="6" Column="108" />
-      <File FileName="WP/Views/Shared/_ScriptsFiles.cshtml" Line="1" Column="1" />
-      <File FileName="WP/Views/Home/Index.cshtml" Line="15" Column="1" />
+      <File FileName="WP/Views/Shared/_StylesFiles.cshtml" />
+      <File FileName="WP/Views/Shared/_ScriptsFiles.cshtml" />
+      <File FileName="WP/Views/Home/Index.cshtml" />
       <File FileName="WP/Views/Home/Privacy.cshtml" />
       <File FileName="WP/Views/Home/Partial/IndexPartial.cshtml" />
-      <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Views/Shared/_Layout.cshtml" Line="9" Column="55" />
+      <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Views/Shared/_Layout.cshtml" />
       <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Views/Shared/_NavbarPartial.cshtml" />
       <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Views/Shared/_FooterPartial.cshtml" />
       <File FileName="WP/Component/VComponent.cs" />
       <File FileName="WP/Views/Shared/Components/VComponent/Default.cshtml" />
       <File FileName="WP/Views/_ViewImports.cshtml" />
-      <File FileName="WP/Views/Product/Edit.cshtml" Line="32" Column="96" />
+      <File FileName="WP/Views/Product/Edit.cshtml" />
       <File FileName="WP/Views/Product/Delete.cshtml" />
-      <File FileName="WP/Views/Shared/_Notification.cshtml" Line="17" Column="2" />
+      <File FileName="WP/Views/Shared/_Notification.cshtml" />
       <File FileName="WP/Views/Shared/Error.cshtml" />
-      <File FileName="WP/wwwroot/css/site.css" Line="28" Column="8" />
+      <File FileName="WP/wwwroot/css/site.css" />
       <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Models/Product.cs" />
       <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Views/Product/Delete.cshtml" />
       <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Views/Product/Edit.cshtml" />
       <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Views/Shared/_Notification.cshtml" />
-      <File FileName="WP/Views/Shared/_UserNavbar.cshtml" Line="38" Column="37" />
-      <File FileName="../../Documents/WebProjeX/WebProject/WebProject/wwwroot/css/sidebar.css" Line="11609" Column="1" />
-      <File FileName="../../Documents/WebProjeX/WebProject/WebProject/wwwroot/css/site.css" Line="1" Column="1" />
+      <File FileName="WP/Views/Shared/_UserNavbar.cshtml" />
+      <File FileName="../../Documents/WebProjeX/WebProject/WebProject/wwwroot/css/sidebar.css" />
+      <File FileName="../../Documents/WebProjeX/WebProject/WebProject/wwwroot/css/site.css" />
+      <File FileName="../../Documents/WebProjeX/WebProject/WebProject/Views/Shared/_NavbarUserPartial.cshtml" />
+      <File FileName="WP/appsettings.json" />
+      <File FileName="../../../../usr/local/share/dotnet/sdk/6.0.403/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" />
+      <File FileName="BackUp/Controllers/CategoryController.json" Line="12" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="WP" expanded="True">
-            <Node name="WebProject" expanded="True">
-              <Node name="Views" expanded="True">
-                <Node name="Shared" expanded="True" />
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True" />
-              </Node>
+            <Node name="BackUp" expanded="True">
+              <Node name="Controllers" expanded="True" />
             </Node>
             <Node name="WP" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Category" expanded="True" />
-                <Node name="Home" expanded="True" />
-                <Node name="Product" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_UserNavbar.cshtml" selected="True" />
-                </Node>
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True" />
-                <Node name="img" expanded="True" />
-              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MultiItemStartupConfigurations />
 </Properties>

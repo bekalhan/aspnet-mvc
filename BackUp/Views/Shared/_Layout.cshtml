@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+    </style>
+    <title>@ViewData["Title"] - WP</title>
+    <partial name="_StylesFiles" />
+</head>
+<body>
+
+    <partial name="_UserNavbar" />
+
+    <div class="wrapper d-flex align-items-stretch">
+
+        @*  <partial name="_Navbar" /> *@
+
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                <partial name="_Notification" />
+                @RenderBody()
+            </main>
+        </div>
+
+        <partial name="_ScriptsFiles" />
+        @await RenderSectionAsync("Scripts", required: false)
+    </div>
+</body>
+</html>
+
