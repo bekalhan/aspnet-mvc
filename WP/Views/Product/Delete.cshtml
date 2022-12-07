@@ -1,4 +1,4 @@
-﻿@model WP.Models.Product
+﻿@model BackUp.Models.Product
 
 @{
     ViewData["Title"] = "Edit";
@@ -21,6 +21,18 @@
             <label asp-for="Description"></label>
             <textarea asp-for="Description" class="form-control"></textarea>
             <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-6">
+                <label asp-for="Brand"></label>
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-6">
+                <label asp-for="Color"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
         </div>
         <div class="row">
             <div class="mb-3 col-6">

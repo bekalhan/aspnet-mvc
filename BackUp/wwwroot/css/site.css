@@ -26,3 +26,11 @@ body {
 #product-card:hover {
     transform:rotateY(15deg);
 }
+
+.star-st i {
+    margin-top:2em;
+    color: #ff9117;
+    font-size:32px;
+}
+
+

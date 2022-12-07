@@ -24,6 +24,18 @@
         </div>
         <div class="row">
             <div class="mb-3 col-6">
+                <label asp-for="Brand"></label>
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-6">
+                <label asp-for="Color"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-6">
                 <label asp-for="Price"></label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
@@ -37,15 +49,15 @@
             </div>
         </div>
         <div class="mb-3">
-         <label asp-for="Image"></label>
-         <input type="file" name="file" id="uploadBox" class="form-control" />
+            <label asp-for="Image"></label>
+            <input type="file" name="file" id="uploadBox" class="form-control" />
         </div>
 
     </div>
-        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
-        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">
-            Back to List
-        </a>
+    <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+    <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">
+        Back to List
+    </a>
     </div>
 
     </div>

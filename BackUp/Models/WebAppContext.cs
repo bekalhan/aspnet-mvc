@@ -11,7 +11,7 @@ namespace BackUp.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=localhost,1433;Database=Crud;User=SA;Password=MyPassword123#;Trusted_Connection=false;Encrypt=false;");
+            optionsBuilder.UseSqlServer(@"Server=localhost,1433;Database=Crud2;User=SA;Password=MyPassword123#;Trusted_Connection=false;Encrypt=false;");
         }
 
     }

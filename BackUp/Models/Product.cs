@@ -12,6 +12,8 @@ namespace BackUp.Models
         public string Description { get; set; }
         [ValidateNever]
         public string Image { get; set; }
+        public string Brand { get; set; }
+        public string Color { get; set; }
         public int CategoryId { get; set; }
 
         [ValidateNever]
