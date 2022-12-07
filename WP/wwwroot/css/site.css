@@ -65,3 +65,14 @@ body {
 .qty {
     font-size: 12px;
 }
+
+
+.hvr-spn:hover {
+    background-color: #c1e126 !important;
+    color: #2b353d !important;
+    transition: 2s;
+}
+
+#product-card:hover {
+    transform: rotateY(15deg);
+}
