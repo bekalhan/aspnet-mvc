@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1704.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WP", "WP\WP.csproj", "{8330D629-07A2-4653-B596-94394DA21FC6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebProject", "..\..\Documents\WebProjeX\WebProject\WebProject\WebProject.csproj", "{A3F6BCDD-0881-489A-84EA-0AE14D2C12AB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackUp", "BackUp\BackUp.csproj", "{C75B35A9-E4A0-4123-B7A6-E42F217D1BE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WP", "WP\WP.csproj", "{8330D629-07A2-4653-B596-94394DA21FC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +15,6 @@ Global
 		{8330D629-07A2-4653-B596-94394DA21FC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8330D629-07A2-4653-B596-94394DA21FC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8330D629-07A2-4653-B596-94394DA21FC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3F6BCDD-0881-489A-84EA-0AE14D2C12AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3F6BCDD-0881-489A-84EA-0AE14D2C12AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3F6BCDD-0881-489A-84EA-0AE14D2C12AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3F6BCDD-0881-489A-84EA-0AE14D2C12AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C75B35A9-E4A0-4123-B7A6-E42F217D1BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C75B35A9-E4A0-4123-B7A6-E42F217D1BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C75B35A9-E4A0-4123-B7A6-E42F217D1BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C75B35A9-E4A0-4123-B7A6-E42F217D1BE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
