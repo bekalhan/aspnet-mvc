@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using WP.Models;
 var builder = WebApplication.CreateBuilder(args);
@@ -7,9 +8,10 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<WebAppContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<IdentityUser>()
+builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddDefaultTokenProviders()
     .AddEntityFrameworkStores<WebAppContext>();
-
+builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IEmailSender,EmailSender>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
