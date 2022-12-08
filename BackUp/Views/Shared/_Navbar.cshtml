@@ -1,0 +1,22 @@
+﻿<nav id="sidebar">
+    <div class="p-4 pt-5">
+        <a asp-area="" asp-controller="Home" asp-action="Index">
+            <img class="img logo rounded-circle mb-5" src="~/img/admin.gif" runat="server" />
+        </a>
+        <ul class="list-unstyled components mb-5">
+            <li class="active">
+                <a asp-area="" asp-controller="Category" asp-action="Create" aria-expanded="false">Category</a>
+            </li>
+            <li>
+                <a asp-area="" asp-action="Index" asp-controller="Category">Category List</a>
+            </li>
+            <li>
+                <a asp-area="" asp-action="Create" asp-controller="Product">Product Create</a>
+            </li>
+            <li>
+                <a asp-area="" asp-action="Index" asp-controller="Product">Product List</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>

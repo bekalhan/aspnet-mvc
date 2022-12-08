@@ -1,0 +1,30 @@
+﻿@model BackUp.Models.Category
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form method="post" asp-action="Delete" class="mt-3">
+    <input asp-for="CategoryId" hidden />
+    <div class="border p-3 t-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Category</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="CategoryName"></label>
+            <input asp-for="CategoryName" disabled class="form-control" />
+            <span asp-validation-for="CategoryName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CreatedTime"></label>
+            <input asp-for="CreatedTime" disabled class="form-control" />
+            <span asp-validation-for="CreatedTime" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>

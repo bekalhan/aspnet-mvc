@@ -1,0 +1,36 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.hvr-spn:hover {
+    background-color: #c1e126 !important;
+    color: #2b353d !important;
+    transition:2s;
+}
+
+#product-card:hover {
+    transform:rotateY(15deg);
+}
+
+.star-st i {
+    margin-top:2em;
+    color: #ff9117;
+    font-size:32px;
+}
+
+
