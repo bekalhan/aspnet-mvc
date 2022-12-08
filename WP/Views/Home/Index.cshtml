@@ -1,354 +1,74 @@
-﻿
+﻿@model IEnumerable<WP.Models.Product>
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="container mt-5">
     <div class="row" style="width:100%">
-        <div class="col-4 mt-3" id="product-card">
-            <div class="card">
-                <img class="card-img-top" src="~/images/macbook.jpeg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Macbook M1
-                    </h5>
-                    <p class="card-text">
-                        Karşınızda Apple’ın en kolay taşınabilen profesyonel laptopu.
-                        Yeni M2 çiple şimdi daha da becerikli.
-                    </p>
-                    <div class="" style="display:flex;justify-content:space-between">
-                        <h4>
-                            $21.000
-                        </h4>
-                        <div class="row">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <h6 style="font-weight:bold;margin-top:0.1em;">
-                                    3
-                                </h6>
-                                <span class="" style="font-weight:100;margin-left:0.4em;">
-                                    comments
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="row" style="display:flex;justify-content:space-between;">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <i class="bi bi-cart-check-fill" style="font-size: 24px; color: black; background-color: #c1e126;padding:3px;">
-                                </i>
-                                <div class="hvr-spn" style="background-color: #2b353d;color:white;padding:3px">
-                                    <span style="padding:6px;margin-top:3em;">
-                                        Add To Cart
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+        @{
+            foreach (var item in Model)
+            {
+                    <div class="col-4 mt-3" id="product-card">
+                        <div class="card">
+                         <a asp-action="DetailedProducts" asp-controller="Home" asp-route-id="@item.ID">
+                            <img class="card-img-top" src="@item.Image" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    @item.Title
+                                </h5>
+                                <p class="card-text">
+                                    @{
+                                    int length;
+                                    if(item.Description.Length>35){
+                                        length = 35;
+                                    }
+                                    else{
+                                        length = item.Description.Length;
+                                    }
+                                    }
+                                    @item.Description.Substring(0,length)
+                                    @{
+                                        if(item.Description.Length>40){
+                                            @:...
+                                        }
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 mt-3" id="product-card">
-            <div class="card">
-                <img class="card-img-top" src="~/images/macbook.jpeg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Macbook M1
-                    </h5>
-                    <p class="card-text">
-                        Karşınızda Apple’ın en kolay taşınabilen profesyonel laptopu.
-                        Yeni M2 çiple şimdi daha da becerikli.
-                    </p>
-                    <div class="" style="display:flex;justify-content:space-between">
-                        <h4>
-                            $21.000
-                        </h4>
-                        <div class="row">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <h6 style="font-weight:bold;margin-top:0.1em;">
-                                    3
-                                </h6>
-                                <span class="" style="font-weight:100;margin-left:0.4em;">
-                                    comments
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="row" style="display:flex;justify-content:space-between;">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <i class="bi bi-cart-check-fill" style="font-size: 24px; color: black; background-color: #c1e126;padding:3px;">
-                                </i>
-                                <div class="hvr-spn" style="background-color: #2b353d;color:white;padding:3px">
-                                    <span style="padding:6px;margin-top:3em;">
-                                        Add To Cart
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+                                    }
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 mt-3" id="product-card">
-            <div class="card">
-                <img class="card-img-top" src="~/images/macbook.jpeg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Macbook M1
-                    </h5>
-                    <p class="card-text">
-                        Karşınızda Apple’ın en kolay taşınabilen profesyonel laptopu.
-                        Yeni M2 çiple şimdi daha da becerikli.
-                    </p>
-                    <div class="" style="display:flex;justify-content:space-between">
-                        <h4>
-                            $21.000
-                        </h4>
-                        <div class="row">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <h6 style="font-weight:bold;margin-top:0.1em;">
-                                    3
-                                </h6>
-                                <span class="" style="font-weight:100;margin-left:0.4em;">
-                                    comments
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="row" style="display:flex;justify-content:space-between;">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <i class="bi bi-cart-check-fill" style="font-size: 24px; color: black; background-color: #c1e126;padding:3px;">
-                                </i>
-                                <div class="hvr-spn" style="background-color: #2b353d;color:white;padding:3px">
-                                    <span style="padding:6px;margin-top:3em;">
-                                        Add To Cart
-                                    </span>
+                                </p>
+                                <div class="" style="display:flex;justify-content:space-between">
+                                    <h4>
+                                        $@item.Price
+                                    </h4>
+                                    <div class="row">
+                                        <div class="col-12" style="display:flex;justify-content:flex-start">
+                                            <h6 style="font-weight:bold;margin-top:0.1em;">
+                                                3
+                                            </h6>
+                                            <span class="" style="font-weight:100;margin-left:0.4em;">
+                                                comments
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                                <div class="row mt-4">
+                                    <div class="row" style="display:flex;justify-content:space-between;">
+                                        <div class="col-12" style="display:flex;justify-content:flex-start">
+                                            <i class="bi bi-cart-check-fill" style="font-size: 18px; color: black; background-color: #c1e126;padding:3px;">
+                                            </i>
+                                            <div class="hvr-spn" style="background-color: #2b353d;color:white;padding:3px">
+                                                <span style="padding:6px;margin-top:3em;">
+                                                    Add To Cart
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 mt-3" id="product-card">
-            <div class="card">
-                <img class="card-img-top" src="~/images/macbook.jpeg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Macbook M1
-                    </h5>
-                    <p class="card-text">
-                        Karşınızda Apple’ın en kolay taşınabilen profesyonel laptopu.
-                        Yeni M2 çiple şimdi daha da becerikli.
-                    </p>
-                    <div class="" style="display:flex;justify-content:space-between">
-                        <h4>
-                            $21.000
-                        </h4>
-                        <div class="row">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <h6 style="font-weight:bold;margin-top:0.1em;">
-                                    3
-                                </h6>
-                                <span class="" style="font-weight:100;margin-left:0.4em;">
-                                    comments
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="row" style="display:flex;justify-content:space-between;">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <i class="bi bi-cart-check-fill" style="font-size: 24px; color: black; background-color: #c1e126;padding:3px;">
-                                </i>
-                                <div class="hvr-spn" style="background-color: #2b353d;color:white;padding:3px">
-                                    <span style="padding:6px;margin-top:3em;">
-                                        Add To Cart
-                                    </span>
                                 </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 mt-3" id="product-card">
-            <div class="card">
-                <img class="card-img-top" src="~/images/macbook.jpeg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Macbook M1
-                    </h5>
-                    <p class="card-text">
-                        Karşınızda Apple’ın en kolay taşınabilen profesyonel laptopu.
-                        Yeni M2 çiple şimdi daha da becerikli.
-                    </p>
-                    <div class="" style="display:flex;justify-content:space-between">
-                        <h4>
-                            $21.000
-                        </h4>
-                        <div class="row">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <h6 style="font-weight:bold;margin-top:0.1em;">
-                                    3
-                                </h6>
-                                <span class="" style="font-weight:100;margin-left:0.4em;">
-                                    comments
-                                </span>
-                            </div>
+                            </div></a>
                         </div>
                     </div>
-                    <div class="row mt-4">
-                        <div class="row" style="display:flex;justify-content:space-between;">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <i class="bi bi-cart-check-fill" style="font-size: 24px; color: black; background-color: #c1e126;padding:3px;">
-                                </i>
-                                <div class="hvr-spn" style="background-color: #2b353d;color:white;padding:3px">
-                                    <span style="padding:6px;margin-top:3em;">
-                                        Add To Cart
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 mt-3" id="product-card">
-            <div class="card">
-                <img class="card-img-top" src="~/images/macbook.jpeg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Macbook M1
-                    </h5>
-                    <p class="card-text">
-                        Karşınızda Apple’ın en kolay taşınabilen profesyonel laptopu.
-                        Yeni M2 çiple şimdi daha da becerikli.
-                    </p>
-                    <div class="" style="display:flex;justify-content:space-between">
-                        <h4>
-                            $21.000
-                        </h4>
-                        <div class="row">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <h6 style="font-weight:bold;margin-top:0.1em;">
-                                    3
-                                </h6>
-                                <span class="" style="font-weight:100;margin-left:0.4em;">
-                                    comments
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="row" style="display:flex;justify-content:space-between;">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <i class="bi bi-cart-check-fill" style="font-size: 24px; color: black; background-color: #c1e126;padding:3px;">
-                                </i>
-                                <div class="hvr-spn" style="background-color: #2b353d;color:white;padding:3px">
-                                    <span style="padding:6px;margin-top:3em;">
-                                        Add To Cart
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 mt-3" id="product-card">
-            <div class="card">
-                <img class="card-img-top" src="~/images/macbook.jpeg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Macbook M1
-                    </h5>
-                    <p class="card-text">
-                        Karşınızda Apple’ın en kolay taşınabilen profesyonel laptopu.
-                        Yeni M2 çiple şimdi daha da becerikli.
-                    </p>
-                    <div class="" style="display:flex;justify-content:space-between">
-                        <h4>
-                            $21.000
-                        </h4>
-                        <div class="row">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <h6 style="font-weight:bold;margin-top:0.1em;">
-                                    3
-                                </h6>
-                                <span class="" style="font-weight:100;margin-left:0.4em;">
-                                    comments
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="row" style="display:flex;justify-content:space-between;">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <i class="bi bi-cart-check-fill" style="font-size: 24px; color: black; background-color: #c1e126;padding:3px;">
-                                </i>
-                                <div class="hvr-spn" style="background-color: #2b353d;color:white;padding:3px">
-                                    <span style="padding:6px;margin-top:3em;">
-                                        Add To Cart
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 mt-3" id="product-card">
-            <div class="card">
-                <img class="card-img-top" src="~/images/macbook.jpeg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Macbook M1
-                    </h5>
-                    <p class="card-text">
-                        Karşınızda Apple’ın en kolay taşınabilen profesyonel laptopu.
-                        Yeni M2 çiple şimdi daha da becerikli.
-                    </p>
-                    <div class="" style="display:flex;justify-content:space-between">
-                        <h4>
-                            $21.000
-                        </h4>
-                        <div class="row">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <h6 style="font-weight:bold;margin-top:0.1em;">
-                                    3
-                                </h6>
-                                <span class="" style="font-weight:100;margin-left:0.4em;">
-                                    comments
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="row" style="display:flex;justify-content:space-between;">
-                            <div class="col-12" style="display:flex;justify-content:flex-start">
-                                <i class="bi bi-cart-check-fill" style="font-size: 24px; color: black; background-color: #c1e126;padding:3px;">
-                                </i>
-                                <div class="hvr-spn" style="background-color: #2b353d;color:white;padding:3px">
-                                    <span style="padding:6px;margin-top:3em;">
-                                        Add To Cart
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+            }
+        }
+        
     </div>
-
 </div>
