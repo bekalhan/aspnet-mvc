@@ -15,6 +15,7 @@ namespace WP.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<User> users { get; set; }
+        public DbSet<Comment> Comments { get; set; }
         
             
         

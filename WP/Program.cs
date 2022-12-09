@@ -13,7 +13,7 @@ builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddDefaultTokenProvide
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IEmailSender,EmailSender>();
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation() ;
 
 builder.Services.AddDbContext<WebAppContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")

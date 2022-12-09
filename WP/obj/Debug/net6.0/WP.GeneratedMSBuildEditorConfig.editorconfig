@@ -11,7 +11,7 @@ build_property.RootNamespace = WP
 build_property.ProjectDir = C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\Aytug\source\repos\bekalhan\WebTech\WP
 build_property._RazorSourceGeneratorDebug = 
 
