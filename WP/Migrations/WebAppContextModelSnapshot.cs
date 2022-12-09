@@ -175,12 +175,10 @@ namespace WP.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -217,12 +215,10 @@ namespace WP.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -253,6 +249,31 @@ namespace WP.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("WP.Models.Comment", b =>
+                {
+                    b.Property<int>("commentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("commentID"));
+
+                    b.Property<DateTime>("commentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("commentString")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("commentUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("commentID");
+
+                    b.HasIndex("commentUserId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("WP.Models.Product", b =>
                 {
                     b.Property<int>("ID")
@@ -261,8 +282,16 @@ namespace WP.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -346,6 +375,15 @@ namespace WP.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("WP.Models.Comment", b =>
+                {
+                    b.HasOne("WP.Models.User", "commentUser")
+                        .WithMany()
+                        .HasForeignKey("commentUserId");
+
+                    b.Navigation("commentUser");
                 });
 
             modelBuilder.Entity("WP.Models.Product", b =>

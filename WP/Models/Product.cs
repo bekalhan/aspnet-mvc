@@ -17,6 +17,7 @@ namespace WP.Models
 
         [ValidateNever]
         public Category Category { get; set; }
+        public List<Comment> ProductComments { get; set; }
     }
 }
 

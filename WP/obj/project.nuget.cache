@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3HDocmhStJkZkVc18DYNpOL/+bojF8wYCVCRPAigLsEglGL3W0ErD4pndsPNDjj44pg1nuz+PxiwmtBMT8fSjg==",
+  "dgSpecHash": "x/3YpD+ZSqkswLTBgWiIJQ1/CCJBqfksU9vR1gmsRAKVcCWgS0qV+NYA+mGQ0Fjxk7OR8dC7yR95/DRhLxcB1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\WP.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,9 @@
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.11\\microsoft.aspnetcore.cryptography.keyderivation.6.0.11.nupkg.sha512",
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.11\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.11.nupkg.sha512",
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.11\\microsoft.aspnetcore.identity.ui.6.0.11.nupkg.sha512",
-    "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
+    "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.11\\microsoft.aspnetcore.mvc.razor.extensions.6.0.11.nupkg.sha512",
+    "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\6.0.11\\microsoft.aspnetcore.mvc.razor.runtimecompilation.6.0.11.nupkg.sha512",
+    "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.build\\17.0.0\\microsoft.build.17.0.0.nupkg.sha512",
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.build.framework\\17.0.0\\microsoft.build.framework.17.0.0.nupkg.sha512",
@@ -26,7 +28,7 @@
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.codeanalysis.csharp.scripting\\4.0.0\\microsoft.codeanalysis.csharp.scripting.4.0.0.nupkg.sha512",
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\4.0.0\\microsoft.codeanalysis.csharp.workspaces.4.0.0.nupkg.sha512",
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.codeanalysis.features\\4.0.0\\microsoft.codeanalysis.features.4.0.0.nupkg.sha512",
-    "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.codeanalysis.razor\\6.0.0\\microsoft.codeanalysis.razor.6.0.0.nupkg.sha512",
+    "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.codeanalysis.razor\\6.0.11\\microsoft.codeanalysis.razor.6.0.11.nupkg.sha512",
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.codeanalysis.scripting.common\\4.0.0\\microsoft.codeanalysis.scripting.common.4.0.0.nupkg.sha512",
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.codeanalysis.visualbasic\\4.0.0\\microsoft.codeanalysis.visualbasic.4.0.0.nupkg.sha512",
     "C:\\Users\\Aytug\\.nuget\\packages\\microsoft.codeanalysis.visualbasic.features\\4.0.0\\microsoft.codeanalysis.visualbasic.features.4.0.0.nupkg.sha512",
