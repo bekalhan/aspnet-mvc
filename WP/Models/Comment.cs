@@ -7,7 +7,7 @@ namespace WP.Models
         [Key]
         public int commentID { get; set; }
         public string commentString { get; set; }
-        public User commentUser { get; set; }
+        public Product product { get; set; }
         public DateTime commentDate { get; set; }
     }
 }

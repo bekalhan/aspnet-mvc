@@ -114,9 +114,9 @@ namespace WP.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+
+                     return LocalRedirect("~/Home/Index");
                     
-                    
-                    return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
                 {

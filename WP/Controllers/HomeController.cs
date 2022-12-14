@@ -20,10 +20,19 @@ public class HomeController : Controller
    
     public IActionResult Index()
     {
-        var allProducts = from y in _context.Products select y;
+        var allProducts = (from y in _context.Products select y).ToList();
         return View(allProducts);
     }
-
+    public IActionResult CommentSection(int productID,string context)
+    {
+        Comment comment = new Comment(); 
+        comment.product.ID = productID;
+        comment.commentDate = DateTime.Now;
+        comment.commentString = context;
+        _context.Add(comment);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
     public async Task<IActionResult> DetailedProducts(int? id)
     {
         if (id == null)
@@ -32,7 +41,7 @@ public class HomeController : Controller
         }
 
         var choosenProduct = await _context.Products.Include(k => k.Category).FirstOrDefaultAsync(m => m.ID == id);
-
+        
         if (choosenProduct == null)
         {
             return NotFound();
