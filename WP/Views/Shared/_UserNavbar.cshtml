@@ -1,5 +1,15 @@
-﻿<header class="section-header">
+﻿@*@model WP.Models.User*@
+@using Microsoft.AspNetCore.Identity
 
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<header class="section-header">
+    @if (User.IsInRole("Admin"))
+    {
+        <partial name="_Navbar" />
+        @*<a href="~/Product/Index">Admin Paneli</a>*@
+    }
+    else { 
     <nav class="navbar navbar-dark navbar-expand-lg p-0 bg-dark" style="margin-bottom:0px !important">
         <div class="container-fluid">
             <ul class="navbar-nav d-none d-md-flex mr-auto">
@@ -38,8 +48,22 @@
                 <div class="col-md-2 d-flex justify-content-center">
                     <div class="d-flex d-none d-md-flex flex-row align-items-center">
                         <i class="bi bi-person" style="font-size:24px"></i>
-                        <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
-                        <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+                            </li>
+                            <li class="nav-item">
+                                <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                </form>
+                            </li>
+                           
+                        }
+                        else{
+                            <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                            <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                        }
                     </div>
                 </div>
 
@@ -72,4 +96,5 @@
             </li>
         </ul>
     </nav>
+    }
 </header>

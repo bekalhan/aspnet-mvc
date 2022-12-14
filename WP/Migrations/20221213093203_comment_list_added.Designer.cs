@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WP.Models;
 
@@ -11,9 +12,11 @@ using WP.Models;
 namespace WP.Migrations
 {
     [DbContext(typeof(WebAppContext))]
-    partial class WebAppContextModelSnapshot : ModelSnapshot
+    [Migration("20221213093203_comment_list_added")]
+    partial class commentlistadded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -257,6 +260,9 @@ namespace WP.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("commentID"));
 
+                    b.Property<int?>("ProductID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("commentDate")
                         .HasColumnType("datetime2");
 
@@ -264,12 +270,14 @@ namespace WP.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("productID")
-                        .HasColumnType("int");
+                    b.Property<string>("commentUserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("commentID");
 
-                    b.HasIndex("productID");
+                    b.HasIndex("ProductID");
+
+                    b.HasIndex("commentUserId");
 
                     b.ToTable("Comments");
                 });
@@ -379,13 +387,15 @@ namespace WP.Migrations
 
             modelBuilder.Entity("WP.Models.Comment", b =>
                 {
-                    b.HasOne("WP.Models.Product", "product")
+                    b.HasOne("WP.Models.Product", null)
                         .WithMany("ProductComments")
-                        .HasForeignKey("productID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProductID");
 
-                    b.Navigation("product");
+                    b.HasOne("WP.Models.User", "commentUser")
+                        .WithMany()
+                        .HasForeignKey("commentUserId");
+
+                    b.Navigation("commentUser");
                 });
 
             modelBuilder.Entity("WP.Models.Product", b =>

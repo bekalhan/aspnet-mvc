@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WP.Models;
 
@@ -11,9 +12,11 @@ using WP.Models;
 namespace WP.Migrations
 {
     [DbContext(typeof(WebAppContext))]
-    partial class WebAppContextModelSnapshot : ModelSnapshot
+    [Migration("20221213093405_comment_list_adde")]
+    partial class commentlistadde
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -249,31 +252,6 @@ namespace WP.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("WP.Models.Comment", b =>
-                {
-                    b.Property<int>("commentID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("commentID"));
-
-                    b.Property<DateTime>("commentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("commentString")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("productID")
-                        .HasColumnType("int");
-
-                    b.HasKey("commentID");
-
-                    b.HasIndex("productID");
-
-                    b.ToTable("Comments");
-                });
-
             modelBuilder.Entity("WP.Models.Product", b =>
                 {
                     b.Property<int>("ID")
@@ -377,17 +355,6 @@ namespace WP.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WP.Models.Comment", b =>
-                {
-                    b.HasOne("WP.Models.Product", "product")
-                        .WithMany("ProductComments")
-                        .HasForeignKey("productID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("product");
-                });
-
             modelBuilder.Entity("WP.Models.Product", b =>
                 {
                     b.HasOne("WP.Models.Category", "Category")
@@ -402,11 +369,6 @@ namespace WP.Migrations
             modelBuilder.Entity("WP.Models.Category", b =>
                 {
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("WP.Models.Product", b =>
-                {
-                    b.Navigation("ProductComments");
                 });
 #pragma warning restore 612, 618
         }

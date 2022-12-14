@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,7 @@ using WP.Models;
 
 namespace WP.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductController : Controller
     {
         
@@ -28,6 +30,7 @@ namespace WP.Controllers
         }
 
         // GET: /<controller>/
+        
         public async Task<IActionResult> Index()
         {
             var libraryContext = _context.Products.Include(k => k.Category);
@@ -74,7 +77,7 @@ namespace WP.Controllers
             }
 
         }
-
+        
         //Edit request
 
         public IActionResult Edit(int? id)
@@ -175,5 +178,6 @@ namespace WP.Controllers
             return RedirectToAction("Index");
         }
     }
+    
 }
 
