@@ -20,6 +20,7 @@
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\VComponent\" />
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <None Remove="Views\AdminHome\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.11" />
@@ -48,6 +49,7 @@
     <Folder Include="Component\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\VComponent\" />
+    <Folder Include="Views\AdminHome\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\" />

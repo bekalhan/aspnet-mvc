@@ -1,24 +1,34 @@
-﻿
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-
     </style>
     <title>@ViewData["Title"] - WP</title>
     <partial name="_StylesFiles" />
 </head>
 <body>
 
-    <partial name="_UserNavbar" />
-    
+
+    @if (!User.IsInRole("Admin"))
+    {
+        <partial name="_UserNavbar" />
+    }
+
+
+
     <div class="wrapper d-flex align-items-stretch">
 
-        
-      @*  <partial name="_Navbar" /> *@
-
+        @if (User.IsInRole("Admin"))
+        {
+            <partial name="_UserNavbar" />
+        }
 
         <div class="container">
             <main role="main" class="pb-3">
@@ -32,4 +42,3 @@
     </div>
 </body>
 </html>
-

@@ -15,6 +15,13 @@ namespace WP.Models
         [ForeignKey("ProductId")]
         [ValidateNever]
         public Product product { get; set; }
-        public DateTime commentDate { get; set; }
+
+        public DateTime commentDate { get; set; } = DateTime.Now;
+
+        public string UserId { get; set; }
+
+        [ValidateNever]
+        [ForeignKey("UserId")]
+        public User User { get; set; }
     }
 }
