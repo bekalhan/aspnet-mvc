@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WP.Models
 {
@@ -7,6 +9,11 @@ namespace WP.Models
         [Key]
         public int commentID { get; set; }
         public string commentString { get; set; }
+        
+        public int ProductId { get; set; }
+
+        [ForeignKey("ProductId")]
+        [ValidateNever]
         public Product product { get; set; }
         public DateTime commentDate { get; set; }
     }
