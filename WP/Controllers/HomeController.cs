@@ -26,35 +26,6 @@ public class HomeController : Controller
         return View(allProducts);
     }
 
-    /*  public IActionResult CommentSection(int productId, string context)
-      {
-          Comment comment = new Comment();
-          comment.ProductId = productId;
-          comment.commentDate = DateTime.Now;
-          comment.commentString = context;
-          _context.Add(comment);
-          _context.SaveChanges();
-          return RedirectToAction("Index");
-      }*/
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    [Authorize]
-    public IActionResult AddCommentToProduct(Comment comment, string context)
-    {
-        var claimsIdentity = (ClaimsIdentity)User.Identity;
-        var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
-        comment.UserId = claim.Value;
-
-        _context.Comments.Add(comment);
-        _context.SaveChanges();
-
-        TempData["success"] = "You has been added a comment for this product";
-
-        return RedirectToAction("Index");
-
-    }
-
     public async Task<IActionResult> DetailedProducts(int id)
     {
         CartCommentProduct cc = new CartCommentProduct();
@@ -81,25 +52,6 @@ public class HomeController : Controller
 
         return View(cc);
     }
-
-  /*  [HttpPost]
-    [ValidateAntiForgeryToken]
-    [Authorize]
-    public async Task<IActionResult> DetailedProducts(ShoppingCart shoppingCart)
-    {
-        var claimsIdentity = (ClaimsIdentity)User.Identity;
-        var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
-        shoppingCart.UserId = claim.Value;
-        
-        _context.ShoppingCarts.Add(shoppingCart);
-        _context.SaveChanges();
-        return RedirectToAction(nameof(Index));
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }*/
 
     
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

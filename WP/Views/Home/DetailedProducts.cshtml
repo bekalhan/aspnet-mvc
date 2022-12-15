@@ -114,7 +114,7 @@
     <div class="row" style="display:flex;justify-content:center;font-size:32px;margin-top:20px;padding-top:30px;">
         All Comments
     </div>
-    <form method="post" asp-action="AddCommentToProduct" asp-controller="Home">
+    <form method="post" asp-action="AddCommentToProduct" asp-controller="Comment">
         <input hidden asp-for="@Model.Comment.ProductId" />
         <div>
             <div class="row mt-3" style="margin-top:60px;">
