@@ -19,7 +19,8 @@ namespace WP.Models
 
         [ValidateNever]
         [ForeignKey("UserId")]
-        public User User { get; set; }  
+        public User User { get; set; }
 
+      
     }
 }
