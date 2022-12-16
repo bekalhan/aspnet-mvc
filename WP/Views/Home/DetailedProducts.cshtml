@@ -28,7 +28,18 @@
                         <i class="bi bi-star"></i>
                     </div>
                     <h5>
-                        123 Review
+                        @{
+
+                            if (Model.ShoppingCart.Product.ProductComments.Count > 0)
+                            {
+                                @Model.ShoppingCart.Product.ProductComments.Count @:comments
+                            }
+                            else 
+                            {
+                                @:0 comments
+                            }
+                        }
+                        
                     </h5>
                 </div>
             </div>
@@ -95,7 +106,7 @@
                     </div>
                 </div>
             </div>
-            <form method="post">
+            <form method="post" asp-action="AddProducttoCart" asp-controller="Cart">
                 <input hidden asp-for="@Model.ShoppingCart.ProductId" />
                 <div class="row mt-5">
                     <div class="col-6">
@@ -107,6 +118,7 @@
 
         </div>
     </div>
+
 
 </div>
 

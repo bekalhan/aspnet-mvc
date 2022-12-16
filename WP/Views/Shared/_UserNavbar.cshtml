@@ -66,10 +66,10 @@
 
                     <div class="col-md-2 d-flex justify-content-center">
                         <div class="d-flex d-none d-md-flex flex-row align-items-center">
-                            <span class="shop-bag"><i class="bi bi-basket-fill"></i></span>
+                            <a asp-controller="Cart" asp-action="Index"><span class="shop-bag"><i class="bi bi-basket-fill"></i></span></a>
                             <div class="d-flex flex-column ms-2">
-                                <span class="qty">1 Product</span>
-                                <span class="fw-bold">$27.90</span>
+                                <span class="qty"><a asp-controller="Cart" asp-action="Index" style="color:black;font-size:20px">Cart</a></span>
+                                
                             </div>
                         </div>
                     </div>

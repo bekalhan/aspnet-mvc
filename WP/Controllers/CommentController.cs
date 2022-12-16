@@ -15,7 +15,7 @@ namespace WP.Controllers
     {
         readonly private WebAppContext _context;
 
-        public HomeController(ILogger<WebAppContext context)
+        public CommentController(WebAppContext context)
         {
             _context = context;
         }
@@ -39,7 +39,7 @@ namespace WP.Controllers
 
             TempData["success"] = "You has been added a comment for this product";
 
-            return RedirectToAction("Index");
+            return RedirectToAction("DetailedProducts", "Home", new { id = comment.ProductId });
 
         }
     }

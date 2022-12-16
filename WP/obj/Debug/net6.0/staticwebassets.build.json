@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3gc8wkDDUINXDfStUF0jxVl7FhBebG6fYhohjasMoUY=",
+  "Hash": "VXaDVn11rpYryweDjiQEIuBGQKFBj4UDLjkSS3fi4yA=",
   "Source": "WP",
   "BasePath": "_content/WP",
   "Mode": "Default",
@@ -1358,6 +1358,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\admin.gif"
+    },
+    {
+      "Identity": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\img\\defaultavatar.png",
+      "SourceId": "WP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\",
+      "BasePath": "_content/WP",
+      "RelativePath": "img/defaultavatar.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\defaultavatar.png"
     },
     {
       "Identity": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\img\\macbook.jpeg",
