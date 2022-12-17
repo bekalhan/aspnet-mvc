@@ -23,6 +23,7 @@ namespace WP.Controllers
         {
             _context = context;
         }
+
         public async Task<IActionResult> Index()
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
@@ -30,11 +31,15 @@ namespace WP.Controllers
 
             cartVM = new CartVM()
             {
-                ListCarts = await _context.ShoppingCarts.Where(m => m.UserId == claim.Value).Include(p => p.User).ToListAsync(),
-                
-        };  
+                ListCarts = await _context.ShoppingCarts.Where(m => m.UserId == claim.Value).Include(p => p.User).Include(a => a.Product).ToListAsync(),
+                CartTotal = CartTotal()
+
+            };
             return View(cartVM);
         }
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult AddProducttoCart(ShoppingCart shoppingCart)
@@ -44,7 +49,7 @@ namespace WP.Controllers
             shoppingCart.UserId = claim.Value;
 
             ShoppingCart cartFromDb = _context.ShoppingCarts.FirstOrDefault(u => u.UserId == claim.Value && u.ProductId == shoppingCart.ProductId);
-            if(cartFromDb==null)
+            if (cartFromDb == null)
             {
                 _context.ShoppingCarts.Add(shoppingCart);
             }
@@ -56,19 +61,54 @@ namespace WP.Controllers
                     TempData["failed"] = "Count can not be lower than 0";
                     return RedirectToAction("DetailedProducts", "Home", new { id = shoppingCart.ProductId });
                 }
-                
+
                 _context.Update(cartFromDb);
             }
-           
 
-            
+
+
             _context.SaveChanges();
 
             TempData["success"] = "You have added a product to cart";
-            
-            return RedirectToAction("DetailedProducts", "Home", new {id = shoppingCart.ProductId});
+
+            return RedirectToAction("DetailedProducts", "Home", new { id = shoppingCart.ProductId });
 
         }
+
+
+        public int CartTotal()
+        {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            var UserId = claim.Value;
+            var shoppingList = _context.ShoppingCarts.Where(m => m.UserId == claim.Value).Include(p => p.User).Include(a => a.Product).ToList();
+
+            int cartTotal = 0;
+            foreach (var item in shoppingList)
+            {
+                cartTotal += item.Count * item.Product.Price;
+            };
+
+            return cartTotal;
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult RemoveFromCart(int id)
+        {
+            var cart = _context.ShoppingCarts.Find(id);
+            _context.ShoppingCarts.Remove(cart);
+            _context.SaveChanges();
+            TempData["success"] = "You have been deleted this product succesfully";
+            return RedirectToAction("Index", "Home");
+
+
+        }
+
+
+
+
     }
 }
 
