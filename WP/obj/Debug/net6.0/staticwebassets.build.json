@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VXaDVn11rpYryweDjiQEIuBGQKFBj4UDLjkSS3fi4yA=",
+  "Hash": "PzzwMnf01ALREKXtQFFwGHc9Ne4TLF7uK3ylWPm/1PU=",
   "Source": "WP",
   "BasePath": "_content/WP",
   "Mode": "Default",
@@ -1309,6 +1309,23 @@
       "OriginalItemSpec": "wwwroot\\images\\b29a0787-8e96-4a69-9412-5ce14609b373.jpeg"
     },
     {
+      "Identity": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\images\\bf808bcb-eafa-4821-8e85-2f319f5bcc5b.jpeg",
+      "SourceId": "WP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\",
+      "BasePath": "_content/WP",
+      "RelativePath": "images/bf808bcb-eafa-4821-8e85-2f319f5bcc5b.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\bf808bcb-eafa-4821-8e85-2f319f5bcc5b.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\images\\d1746e90-452b-4b17-8c06-59ae32793665.jpeg",
       "SourceId": "WP",
       "SourceType": "Discovered",
@@ -1326,6 +1343,23 @@
       "OriginalItemSpec": "wwwroot\\images\\d1746e90-452b-4b17-8c06-59ae32793665.jpeg"
     },
     {
+      "Identity": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\images\\d7362a51-7595-4efb-97b7-d4cf09d45c76.webp",
+      "SourceId": "WP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\",
+      "BasePath": "_content/WP",
+      "RelativePath": "images/d7362a51-7595-4efb-97b7-d4cf09d45c76.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\d7362a51-7595-4efb-97b7-d4cf09d45c76.webp"
+    },
+    {
       "Identity": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\images\\e8c1a16e-ccda-486f-8424-cdeead566635.jpeg",
       "SourceId": "WP",
       "SourceType": "Discovered",
@@ -1341,6 +1375,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\e8c1a16e-ccda-486f-8424-cdeead566635.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\images\\f66f478a-0e1a-41cf-9968-1b76bfba974c.webp",
+      "SourceId": "WP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\",
+      "BasePath": "_content/WP",
+      "RelativePath": "images/f66f478a-0e1a-41cf-9968-1b76bfba974c.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\f66f478a-0e1a-41cf-9968-1b76bfba974c.webp"
     },
     {
       "Identity": "C:\\Users\\Aytug\\source\\repos\\bekalhan\\WebTech\\WP\\wwwroot\\img\\admin.gif",
