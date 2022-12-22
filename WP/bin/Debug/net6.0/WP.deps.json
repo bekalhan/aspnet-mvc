@@ -319,6 +319,11 @@
         "runtime": {
           "WP.dll": {}
         },
+        "resources": {
+          "es-ES/WP.resources.dll": {
+            "locale": "es-ES"
+          }
+        },
         "compile": {
           "WP.dll": {}
         }

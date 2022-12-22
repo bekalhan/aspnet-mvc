@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<WP.Models.Product>
+@inject ILanguageService language
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -33,7 +34,7 @@
                                         }
 
                                     }
-
+                                    
                                 </p>
                                 <div class="" style="display:flex;justify-content:space-between">
                                     <h4>
@@ -57,7 +58,7 @@
                                             </i>
                                             <div class="hvr-spn" style="background-color: #2b353d;color:white;padding:3px">
                                                 <span style="padding:6px;margin-top:3em;">
-                                                    Add To Cart
+                                                    @language.Getkey("Add To Cart")
                                                 </span>
                                             </div>
                                         </div>

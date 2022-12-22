@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WP.Models;
@@ -25,7 +26,14 @@ public class HomeController : Controller
         var allProducts = (from y in _context.Products select y).ToList();
         return View(allProducts);
     }
+    public IActionResult ChangeLanguage(string culture)
+    {
+        Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
+            CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+            new CookieOptions() { Expires = DateTimeOffset.UtcNow.AddYears(1) });
 
+        return Redirect(Request.Headers["Referer"].ToString());
+    }
     public async Task<IActionResult> DetailedProducts(int id)
     {
         CartCommentProduct cc = new CartCommentProduct();
@@ -44,7 +52,7 @@ public class HomeController : Controller
         };
         productobje = new()
         {
-               ProductComments = await _context.Comments.Where(a => a.ProductId == id).Include(p => p.User).ToListAsync(),    
+               ProductComments = await _context.Comments.Where(a => a.ProductId == id).Include(p => p.User)?.ToListAsync(),    
         };
         cc.ShoppingCart = shoppingobje;
         cc.Comment = commentobje;

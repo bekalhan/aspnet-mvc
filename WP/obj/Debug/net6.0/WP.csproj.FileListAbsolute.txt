@@ -854,3 +854,10 @@ C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\bin\Debug\net6.0\refs\System.Xml
 C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\bin\Debug\net6.0\refs\WindowsBase.dll
 C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\bin\Debug\net6.0\es-ES\WP.resources.dll
+C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\obj\Debug\net6.0\WP.Resources.SharedResource.es-ES.resources
+C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\obj\Debug\net6.0\WP.csproj.GenerateResource.cache
+C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\obj\Debug\net6.0\es-ES\WP.resources.dll
+C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\bin\Debug\net6.0\ja-JP\WP.resources.dll
+C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\obj\Debug\net6.0\WP.Resources.SharedResource.ja-JP.resources
+C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\obj\Debug\net6.0\ja-JP\WP.resources.dll

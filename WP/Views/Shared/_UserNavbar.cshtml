@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@inject ILanguageService language
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
@@ -10,41 +11,25 @@
     }
     else
     {
-        <nav class="navbar navbar-dark navbar-expand-lg p-0 bg-dark" style="margin-bottom:0px !important">
-            <div class="container-fluid">
-                <ul class="navbar-nav d-none d-md-flex mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Free Delivery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Shop</a></li>
-                </ul>
-                <ul class="navbar-nav d-flex align-items-center">
-                    <li class="nav-item">
-                        <div class="d-flex flex-row">
-                            <img src="~/img/admin.gif" class="rounded-circle" width="30">
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link d-flex align-items-center" data-abc="true"><span>E-Commerce</span><i class='bx bxs-chevron-down'></i></a>
-                    </li>
 
-                </ul>
-            </div>
-        </nav>
 
         <section class="header-main border-bottom bg-white mt-0 p-3">
             <div class="container-fluid">
                 <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
                     <div class="col-md-2 d-flex justify-content-center">
-                        <i class="bi bi-cart-check-fill" style="font-size: 45px;color: #5d18eb">
-                        </i>
+                        <a asp-controller="Home" asp-action="Index">
+                            <i class="bi bi-cart-check-fill" style="font-size: 45px;color: #5d18eb">
+                            </i>
+                        </a>
                     </div>
                     <div class="col-md-5">
                         <div class="d-flex form-inputs justify-content-center align-items-center">
-                            <input class="form-control" type="text" placeholder="Search any product...">
+                            <input class="form-control" type="text" placeholder="@language.Getkey("Search any product...")">
                             <i class="bi bi-search" style="color:black;margin-bottom:3em"></i>
                         </div>
                     </div>
 
+                    
                     <div class="col-md-3 d-flex justify-content-center">
                         <div class="d-flex d-none d-md-flex flex-row align-items-center">
                             <i class="bi bi-person" style="font-size:30px"></i>
@@ -53,45 +38,51 @@
                                 <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style="font-weight:bold;">@UserManager.GetUserName(User)</a>
 
                                 <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark">@language.Getkey("Logout")</button>
                                 </form>
                             }
                             else
                             {
-                                <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
-                                <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">@language.Getkey("Register")</a>
+                                <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">@language.Getkey("Login")</a>
                             }
                         </div>
                     </div>
-
+                    
                     <div class="col-md-2 d-flex justify-content-center">
                         <div class="d-flex d-none d-md-flex flex-row align-items-center">
                             <a asp-controller="Cart" asp-action="Index"><span class="shop-bag"><i class="bi bi-basket-fill"></i></span></a>
                             <div class="d-flex flex-column ms-2">
-                                <span class="qty"><a asp-controller="Cart" asp-action="Index" style="color:black;font-size:20px">Cart</a></span>
+                                <span class="qty"><a asp-controller="Cart" asp-action="Index" style="color:black;font-size:20px">@language.Getkey("Cart")</a></span>
                                 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="nav-wrapper">
+                <div class="sl-nav">
+                    <ul>
+                        <li>
+                            <div class="triangle"></div>
+                            <ul class="language">
+
+                                <li><a style="color:black" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="nav-link"> @language.Getkey("English")</a></li>
+
+                                <li><a style="color:black" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="es-ES" class="nav-link"> @language.Getkey("Español")</a></li>
+
+                                <li><a style="color:black" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="ja-JP" class="nav-link"> @language.Getkey("Japanese")</a></li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
         </section>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <ul class="navbar-nav" style="width:100%">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Electronics</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fashion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Furnitures</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mobiles</a>
-                </li>
-            </ul>
-        </nav>
     }
 </header>
