@@ -29,7 +29,7 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="col-md-3 d-flex justify-content-center">
                         <div class="d-flex d-none d-md-flex flex-row align-items-center">
                             <i class="bi bi-person" style="font-size:30px"></i>
@@ -46,41 +46,34 @@
                                 <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">@language.Getkey("Register")</a>
                                 <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">@language.Getkey("Login")</a>
                             }
+                            <div class="row">
+                                <div class="col-lg-12 dropdown">
+                                    <div class="dropdown">
+                                        <i class="bi bi-globe-americas dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="font-size:30px;margin-left:1em;"></i>
+                                        <ul class="dropdown-menu">
+
+                                            <li><a style="color:black" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="nav-link"> @language.Getkey("English")</a></li>
+
+                                            <li><a style="color:black" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="es-ES" class="nav-link"> @language.Getkey("Español")</a></li>
+
+                                            <li><a style="color:black" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="ja-JP" class="nav-link"> @language.Getkey("Japanese")</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-md-2 d-flex justify-content-center">
                         <div class="d-flex d-none d-md-flex flex-row align-items-center">
                             <a asp-controller="Cart" asp-action="Index"><span class="shop-bag"><i class="bi bi-basket-fill"></i></span></a>
                             <div class="d-flex flex-column ms-2">
                                 <span class="qty"><a asp-controller="Cart" asp-action="Index" style="color:black;font-size:20px">@language.Getkey("Cart")</a></span>
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="nav-wrapper">
-                <div class="sl-nav">
-                    <ul>
-                        <li>
-                            <div class="triangle"></div>
-                            <ul class="language">
-
-                                <li><a style="color:black" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="nav-link"> @language.Getkey("English")</a></li>
-
-                                <li><a style="color:black" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="es-ES" class="nav-link"> @language.Getkey("Español")</a></li>
-
-                                <li><a style="color:black" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="ja-JP" class="nav-link"> @language.Getkey("Japanese")</a></li>
-
-                            </ul>
-
-                        </li>
-
-                    </ul>
-
-                </div>
-
             </div>
         </section>
 
