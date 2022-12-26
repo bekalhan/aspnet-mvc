@@ -3,6 +3,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WP.Models;
 
@@ -21,11 +22,62 @@ public class HomeController : Controller
 
 
 
-    public IActionResult Index()
+    public IActionResult Index(string? bname,string? search)
     {
-        var allProducts = (from y in _context.Products select y).ToList();
-        return View(allProducts);
+        CategoriesProducts cp = new CategoriesProducts();
+        var categoryObject = cp.categories;
+        var productObject = cp.products;
+        categoryObject = _context.Categories.ToList();
+        ViewData["currentSearch"] = search;
+        if(bname!= null)
+        {
+            if(bname == "Ascending")
+            {
+                productObject = (from y in _context.Products select y).OrderBy(y => y.Price).ToList();
+            }
+            if(bname == "Descending")
+            {
+                productObject = (from y in _context.Products select y).OrderByDescending(y => y.Price).ToList();
+            }
+        }
+        else
+        {
+            productObject = (from y in _context.Products select y).ToList();
+        }
+        cp.products = productObject;
+        cp.categories = categoryObject;
+        return View(cp);
     }
+   
+    public IActionResult FilteredProducts(int id,string? bname)
+    {
+        CategoriesProducts cp2 = new CategoriesProducts();
+        var categoryObject = cp2.categories;
+        var filteredproducts = cp2.products;
+        ViewData["categoryid"] = id;
+        if (bname != null)
+        {
+            if (bname == "Ascending")
+            {
+                filteredproducts = _context.Products.Where(x => x.CategoryId == id).OrderBy(y => y.Price).ToList();
+            }
+            if (bname == "Descending")
+            {
+                filteredproducts = _context.Products.Where(x => x.CategoryId == id).OrderByDescending(y => y.Price).ToList();
+            }
+        }
+        else
+        {
+            filteredproducts = _context.Products.Where(x => x.CategoryId == id).ToList();
+        }
+        categoryObject = _context.Categories.ToList();
+        
+        cp2.products = filteredproducts;
+        cp2.categories = categoryObject;
+        return View(cp2);
+
+    }
+
     public IActionResult ChangeLanguage(string culture)
     {
         Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
@@ -34,6 +86,8 @@ public class HomeController : Controller
 
         return Redirect(Request.Headers["Referer"].ToString());
     }
+   
+    
     public async Task<IActionResult> DetailedProducts(int id)
     {
         CartCommentProduct cc = new CartCommentProduct();

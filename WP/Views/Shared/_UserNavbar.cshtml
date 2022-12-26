@@ -24,7 +24,12 @@
                     </div>
                     <div class="col-md-5">
                         <div class="d-flex form-inputs justify-content-center align-items-center">
-                            <input class="form-control" type="text" placeholder="@language.Getkey("Search any product...")">
+                            <form asp-action="Index" asp-controller="Home" method="get">
+                                <div class="form-group">
+                                    <input type="text" name="search"
+                                </div>
+                            </form>
+                            <input class="form-control" type="text" name="search"  placeholder="@language.Getkey("Search any product...")">
                             <i class="bi bi-search" style="color:black;margin-bottom:3em"></i>
                         </div>
                     </div>

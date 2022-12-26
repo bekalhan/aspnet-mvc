@@ -322,6 +322,9 @@
         "resources": {
           "es-ES/WP.resources.dll": {
             "locale": "es-ES"
+          },
+          "ja-JP/WP.resources.dll": {
+            "locale": "ja-JP"
           }
         },
         "compile": {
