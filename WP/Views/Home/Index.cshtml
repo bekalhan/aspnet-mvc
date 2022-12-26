@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WP.Models.Product>
+﻿@model WP.Models.CategoriesProducts
 @inject ILanguageService language
 @{
     ViewData["Title"] = "Home Page";
@@ -13,52 +13,21 @@
                     <hr style="background-color:#fed700;margin-top:1em;" />
                     <div class="row">
                         <div class="col-lg-12">
-                            Computer
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-primary mx-2">All Products</a>
                             <hr />
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            Phones
-                            <hr />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            Headphones
-                            <hr />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            TV
-                            <hr />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            Computer
-                            <hr />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            Phones
-                            <hr />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            Headphones
-                            <hr />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            TV
-                            <hr />
-                        </div>
-                    </div>
+                    @{
+                        foreach (var item in Model.categories)
+                        {
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <a asp-controller="Home" asp-action="FilteredProducts" asp-route-id="@item.CategoryId" class="btn btn-primary mx-2">@item.CategoryName</a>
+                                    <hr />
+                                </div>
+                            </div>
+                        }
+                    }
                 </div>
             </div>
         </div>
@@ -72,12 +41,22 @@
                             </h5>
                         </div>
                         <div class="col-lg-8 d-flex justify-content-end">
-                            <button class="btn" style="background-color:orange;color:white;">
-                                expensive to cheap
-                            </button>
-                            <button class="btn ml-1" style="background-color:purple;color:white;">
-                                cheap to expensive
-                            </button>
+                            
+             @*               <input asp-controller="Home" asp-action="Index" class="btn" name="asc" style="background-color:orange;color:white;">
+                                Expensive to Cheap
+                            </input>*@
+
+                            @using (Html.BeginForm("Index", "Home"))
+                            {
+                                //<input type="hidden" name="bname" value="asc" />
+                                <input type="submit" name="bname" value="Ascending" class="btn" style="background-color:orange;color:white;" />
+                            }
+
+                            @using (Html.BeginForm("Index", "Home"))
+                            {
+                                //<input type="hidden" name="bname" value="asc" />
+                                <input type="submit" name="bname" value="Descending" class="btn ml-1" style="background-color:purple;color:white;" />
+                            }
                         </div>
 
                     </div>
@@ -87,7 +66,7 @@
                     <hr style="background-color:#fed700" />
                     <div class="row">
                         @{
-                            foreach (var item in Model)
+                            foreach (var item in Model.products)
                             {
                                 <div class="col-4 mt-3" id="product-card">
                                     <div class="card">

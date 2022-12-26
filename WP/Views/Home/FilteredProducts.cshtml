@@ -1,0 +1,136 @@
+﻿@model WP.Models.CategoriesProducts
+@inject ILanguageService language
+
+
+<div class="container mt-5">
+    <div class="row" style="width:100%;">
+        <div class="col-lg-2 mt-5">
+            <div class="card mt-3" style="width:14rem;border-radius:15px;">
+                <div class="card-body">
+                    <h4 style="color:black;">Categories</h4>
+                    <hr style="background-color:#fed700;margin-top:1em;" />
+                    
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-primary mx-2">All Products</a>
+                            <hr />
+                        </div>
+                    </div>
+                    @{
+                        foreach (var item in Model.categories)
+                        {
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <a asp-controller="Home" asp-action="FilteredProducts" asp-route-id="@item.CategoryId" class="btn btn-primary mx-2">@item.CategoryName</a>
+                                    <hr />
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-10" style="padding-left:120px;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <h5>
+                                Hot Products Today
+                            </h5>
+                        </div>
+                        <div class="col-lg-8 d-flex justify-content-end">
+                            @using (Html.BeginForm("FilteredProducts", "Home"))
+                            {
+                        
+                            <input type="submit" name="bname" value="Ascending" class="btn" style="background-color:orange;color:white;" />
+                            }
+
+                            @using (Html.BeginForm("FilteredProducts", "Home", new { id = ViewData["categoryid"] }))
+                            {
+                        
+                            <input type="submit" name="bname" value="Descending" class="btn ml-1" style="background-color:purple;color:white;" />
+                            }
+                        </div>
+                        
+
+                    </div>
+                    <div class="row">
+                    </div>
+                    <hr style="background-color:#fed700" />
+                    <div class="row">
+                        @{
+                            foreach (var item in Model.products)
+                            {
+                                <div class="col-4 mt-3" id="product-card">
+                                    <div class="card">
+                                        <a asp-action="DetailedProducts" asp-controller="Home" asp-route-id="@item.ID">
+                                            <img class="card-img-top" src="@item.Image" alt="Card image cap">
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    @item.Title
+                                                </h5>
+                                                <p class="card-text" style="font-size: 13px;color:black !important;font-weight:100;">
+                                                    @{
+                                                        int length;
+                                                        if (item.Description.Length > 35)
+                                                        {
+                                                            length = 35;
+                                                        }
+                                                        else
+                                                        {
+                                                            length = item.Description.Length;
+                                                        }
+                                                    }
+                                                    @item.Description.Substring(0, length)
+                                                    @{
+                                                        if (item.Description.Length > 40)
+                                                        {
+                                                            @:...
+                                                        }
+
+                                                    }
+
+                                                </p>
+                                                <div class="" style="display:flex;justify-content:space-between">
+                                                    <h4>
+                                                        $@item.Price
+                                                    </h4>
+                                                    <div class="row">
+                                                        <div class="col-12" style="display:flex;justify-content:flex-start">
+                                                            <h6 style="font-weight:bold;margin-top:0.1em;color:black !important;">
+                                                            </h6>
+                                                            <span class="" style="font-weight:100;margin-left:0.4em;color:black !important;">
+
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-4">
+                                                    <div class="row" style="display:flex;justify-content:space-between;">
+                                                        <div class="col-12" style="display:flex;justify-content:flex-start">
+                                                            <i class="bi bi-cart-check-fill" style="font-size: 18px; color: black; background-color: #c1e126;padding:3px;">
+                                                            </i>
+                                                            <div class="hvr-spn" style="background-color: #2b353d;color:white;padding:3px">
+                                                                <span style="padding:6px;margin-top:3em;">
+                                                                    @language.Getkey("Add To Cart")
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
