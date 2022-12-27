@@ -29,21 +29,43 @@ public class HomeController : Controller
         var productObject = cp.products;
         categoryObject = _context.Categories.ToList();
         ViewData["currentSearch"] = search;
-        if(bname!= null)
+        if (search != null)
         {
-            if(bname == "Ascending")
+            if (bname != null)
             {
-                productObject = (from y in _context.Products select y).OrderBy(y => y.Price).ToList();
+                if (bname == "Ascending")
+                {
+                    productObject = _context.Products.Where(x=>x.Title.Contains(search)).OrderBy(y => y.Price).ToList();
+                }
+                if (bname == "Descending")
+                {
+                    productObject = _context.Products.Where(x => x.Title.Contains(search)).OrderByDescending(y => y.Price).ToList();
+                }
             }
-            if(bname == "Descending")
+            else
             {
-                productObject = (from y in _context.Products select y).OrderByDescending(y => y.Price).ToList();
+                productObject = _context.Products.Where(x => x.Title.Contains(search)).ToList();
             }
         }
         else
         {
-            productObject = (from y in _context.Products select y).ToList();
+            if (bname != null)
+            {
+                if (bname == "Ascending")
+                {
+                    productObject = (from y in _context.Products select y).OrderBy(y => y.Price).ToList();
+                }
+                if (bname == "Descending")
+                {
+                    productObject = (from y in _context.Products select y).OrderByDescending(y => y.Price).ToList();
+                }
+            }
+            else
+            {
+                productObject = (from y in _context.Products select y).ToList();
+            }
         }
+        
         cp.products = productObject;
         cp.categories = categoryObject;
         return View(cp);
