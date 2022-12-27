@@ -23,16 +23,19 @@
                         </a>
                     </div>
                     <div class="col-md-5">
-                        <div class="d-flex form-inputs justify-content-center align-items-center">
-                            <form asp-action="Index" asp-controller="Home" method="get">
-                                <div class="form-group">
-                                    <input type="text" name="search" value="@ViewData["currentSearch"]" />
-                                    <input type="submit" name="Search" class="btn btn-primary" />
+                        <form asp-action="Index" asp-controller="Home" method="get">
+
+                            <div class="row d-flex form-inputs justify-content-center align-items-center">
+
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control form-input" placeholder="  search products ..." name="search" value="@ViewData["currentSearch"]" style="width:100%;border-radius:8px;border:1px solid gray" />
                                 </div>
-                            </form>
-                            @*<input class="form-control" type="text" name="search"  placeholder="@language.Getkey("Search any product...")">
-                            <i class="bi bi-search" style="color:black;margin-bottom:3em"></i>*@
-                        </div>
+                                <div class="col-md-4">
+                                    <input type="submit" name="Search" class="btn" style="background-color:#5d18eb;color:white" />
+                                </div>
+
+                            </div>
+                        </form>
                     </div>
 
 
