@@ -44,7 +44,7 @@ public class HomeController : Controller
             }
             else
             {
-                productObject = _context.Products.Where(x => x.Title.Contains(search)).ToList();
+                productObject = _context.Products.Where(x => x.Title.Contains(search)).OrderBy(y=>y.Title).ToList();
             }
         }
         else
@@ -62,7 +62,7 @@ public class HomeController : Controller
             }
             else
             {
-                productObject = (from y in _context.Products select y).ToList();
+                productObject = (from y in _context.Products select y).OrderBy(y => y.Title).ToList();
             }
         }
         

@@ -2,9 +2,9 @@
 @inject ILanguageService language
 
 
-<div class="container mt-5">
+<div class=" mt-5">
     <div class="row" style="width:100%;">
-        <div class="col-lg-2 mt-5">
+        <div class="col-lg-2 mt-5"style="padding-left:4rem">
             <div class="card mt-3" style="width:14rem;border-radius:15px;">
                 <div class="card-body">
                     <h4 style="color:black;">Categories</h4>
@@ -12,7 +12,7 @@
                     
                     <div class="row">
                         <div class="col-lg-12">
-                            <a asp-controller="Home" asp-action="Index" class="btn btn-primary mx-2">All Products</a>
+                            <a asp-controller="Home" asp-action="Index" style="width:150px;" class="btn btn-primary mx-2">All Products</a>
                             <hr />
                         </div>
                     </div>
@@ -21,7 +21,7 @@
                         {
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <a asp-controller="Home" asp-action="FilteredProducts" asp-route-id="@item.CategoryId" class="btn btn-primary mx-2">@item.CategoryName</a>
+                                    <a asp-controller="Home" asp-action="FilteredProducts" style="width:150px;" asp-route-id="@item.CategoryId" class="btn btn-primary mx-2">@item.CategoryName</a>
                                     <hr />
                                 </div>
                             </div>
@@ -30,16 +30,23 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-10" style="padding-left:120px;">
+        <div class="col-lg-10" style="padding-left:40px;">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
+
                         <div class="col-lg-4">
                             <h5>
-                                Hot Products Today
+                                All Products
                             </h5>
+
                         </div>
-                        <div class="col-lg-8 d-flex justify-content-end">
+                    </div>
+                    <hr style="background-color:#fed700" />
+                    <div class="row">
+                    
+
+                        <div class="col-lg-12 d-flex justify-content-end">
                             @using (Html.BeginForm("FilteredProducts", "Home"))
                             {
                         
@@ -56,9 +63,8 @@
 
                     </div>
                     <div class="row">
-                    </div>
-                    <hr style="background-color:#fed700" />
-                    <div class="row">
+                    
+                    
                         @{
                             foreach (var item in Model.products)
                             {
@@ -73,9 +79,9 @@
                                                 <p class="card-text" style="font-size: 13px;color:black !important;font-weight:100;">
                                                     @{
                                                         int length;
-                                                        if (item.Description.Length > 35)
+                                                        if (item.Description.Length > 65)
                                                         {
-                                                            length = 35;
+                                                            length = 65;
                                                         }
                                                         else
                                                         {
