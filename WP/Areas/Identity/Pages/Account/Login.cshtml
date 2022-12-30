@@ -6,10 +6,10 @@
 }
 
 <div class="row">
-    <div class="col-lg-6">
-        <img src="~/img/register.jpeg" style="width:100%" />
+    <div class="col-lg-3" >
+        <img @*src="~/img/register.jpeg"*@ style="width:100%" />
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-6" style="margin-top:100px;" >
         <div class="row mt-5">
             <div class="col-lg-12 mt-2" style="display:flex;justify-content:center;">
                 <i class="bi bi-shop" style="font-size:42px;color:#f7d746"></i> <b class="mt-3 ml-3" style="font-size:28px;">LOGIN</b>
@@ -29,14 +29,14 @@
             <div class="row mt-4">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">
-                    <label asp-for="Input.UserName" style="font-weight:bold;"></label>
+                    <label asp-for="Input.UserName" autocomplete="username" aria-required="true" style="font-weight:bold;"></label>
                 </div>
                 <div class="col-lg-2"></div>
             </div>
             <div class="row">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8" style="display:flex;justify-content:center;">
-                    <input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" placeholder="Username" style="background-color:#f2f7fa;border-radius:8px;" />
+                    <input asp-for="Input.UserName" class="form-control"  placeholder="Username" style="background-color:#f2f7fa;border-radius:8px;" />
                     <span asp-validation-for="Input.UserName" class="text-danger"></span>
                 </div>
                 <div class="col-lg-2"></div>
@@ -45,14 +45,14 @@
             <div class="row mt-2">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">
-                    <label asp-for="Input.Password" style="font-weight:bold;"></label>
+                    <label asp-for="Input.Password" autocomplete="username" style="font-weight:bold;"></label>
                 </div>
                 <div class="col-lg-2"></div>
             </div>
             <div class="row">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8" style="display:flex;justify-content:center;">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="username" aria-required="true" placeholder="Password" style="background-color:#f2f7fa;border-radius:8px;" />
+                    <input asp-for="Input.Password" class="form-control" aria-required="true" placeholder="Password" style="background-color:#f2f7fa;border-radius:8px;" />
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                 <div class="col-lg-2"></div>
@@ -61,7 +61,7 @@
             <div class="row mt-4">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">
-                    <button id="login-submit" type="submit" class="btn" style="background-color:#ffd732;width:100%;">Register</button>
+                    <button id="login-submit" type="submit" class="btn" style="background-color:#ffd732;width:100%;">Login</button>
                 </div>
                 <div class="col-lg-2"></div>
             </div>
@@ -70,13 +70,17 @@
         <div class="row mt-3">
             <hr class="mt-3" />
         </div>
-        <div class="row mt-1" style="display:flex;justify-content:center">
-            <div class="col-lg-12" style="display:flex;justify-content:center">
-                <span>Or sign in with</span>
 
-            </div>
-        </div>
-        <div class="row mt-2 ml-2">
+        
+            <p >
+            <center><a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a></center>
+            </p>
+            <p>
+            <center><a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a></center>
+            </p>
+            
+        
+        @*<div class="row mt-2 ml-2">
             <div class="col-lg-3" style="background-color:#3565a2;display:flex;justify-content:center;">
                 <i class="bi bi-facebook" style=";border-radius:50px;color:white;font-size:36px;"></i>
             </div>
@@ -89,7 +93,7 @@
                 <i class="bi bi-github" style="border-radius:50px;color:white;font-size:36px;></i>
             </div>
 
-        </div>
+        </div>*@
     </div>
 
 

@@ -12,11 +12,7 @@ build_property.ProjectDir = C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-<<<<<<< HEAD
-build_property.MSBuildProjectDirectory = /Users/root1/Desktop/WebOdev/WebTech/WP
-=======
 build_property.MSBuildProjectDirectory = C:\Users\Aytug\source\repos\bekalhan\WebTech\WP
->>>>>>> refs/remotes/origin/main
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/Aytug/source/repos/bekalhan/WebTech/WP/Areas/Identity/Pages/Account/AccessDenied.cshtml]
