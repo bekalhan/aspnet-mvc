@@ -1,7 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
-<nav id="sidebar" style="height:100vh;">
+
+<nav id="sidebar" style="height:1000px;">
     <div class="p-4 pt-5">
         <div class="container">
             <div class="row">
@@ -30,10 +31,7 @@
             </li>
             <li>
                 <a asp-area="" asp-action="Index" asp-controller="Product">Product List</a>
-            </li> 
-            <br />
-            <br />
-            
+            </li>
             <li>
                 <a asp-area="" asp-action="Index" asp-controller="Home">User Home</a>
             </li>
@@ -47,6 +45,11 @@
                     </form>
                 </div>
             </li>
+            <br />
+            <br />
+
+
+
         </ul>
 
     </div>

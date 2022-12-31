@@ -35,9 +35,13 @@ namespace WP.Controllers
                 CartTotal = CartTotal()
 
             };
+
+            var list = await _context.ShoppingCarts.Where(m => m.UserId == claim.Value).ToListAsync();
+            var count = list.Count;
+            ViewData["count"] = count;
+
             return View(cartVM);
         }
-
 
 
         [HttpPost]
@@ -106,9 +110,28 @@ namespace WP.Controllers
 
         }
 
-
-
-
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult OrderProducts()
+        {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            var userID = claim.Value;
+            if (userID is not null)
+            {
+                var list = _context.ShoppingCarts.Where(a => a.UserId == userID).ToList();
+                foreach (var item in list)
+                {
+                    _context.ShoppingCarts.Remove(item);
+                }
+                _context.SaveChanges();
+                TempData["success"] = "You have been ordered succesfuly";
+            }
+            else
+            {
+                NotFound();
+            }
+            return RedirectToAction("Index", "Home");
+        }
     }
-}
 
