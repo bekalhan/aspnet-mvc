@@ -126,9 +126,11 @@ public class HomeController : Controller
         {
             ProductId = id,
         };
+        
+
         productobje = new()
         {
-               ProductComments = await _context.Comments.Where(a => a.ProductId == id).Include(p => p.User)?.ToListAsync(),    
+            ProductComments = await _context.Comments.Where(a => a.ProductId == id).Include(p => p.User)?.ToListAsync(),
         };
         cc.ShoppingCart = shoppingobje;
         cc.Comment = commentobje;
