@@ -93,7 +93,8 @@ public class HomeController : Controller
             filteredproducts = _context.Products.Where(x => x.CategoryId == id).ToList();
         }
         categoryObject = _context.Categories.ToList();
-        
+        var name = _context.Categories.Where(x => x.CategoryId == id).FirstOrDefault();
+        ViewData["name"] = name.CategoryName;
         cp2.products = filteredproducts;
         cp2.categories = categoryObject;
         return View(cp2);

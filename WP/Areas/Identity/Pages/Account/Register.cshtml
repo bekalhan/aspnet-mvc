@@ -50,7 +50,7 @@
 
 <div class="row">
     <div class="col-lg-3">
-        <img @src="~/img/register.jpeg" @ style="width:100%" />
+        <img @*src="~/img/register.jpeg"*@  style="width:100%" />
     </div>
     <div class="col-lg-6">
         <div class="row mt-5">
@@ -165,11 +165,7 @@
                     <div class="col-lg-2"></div>
                 </div>
             </div>
-            <div class="form-floating py-2 col-6">
-                <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-select">
-                    <option disabled selected>--Select Role--</option>
-                </select>
-            </div>
+            
             <div class="row mt-4">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">
