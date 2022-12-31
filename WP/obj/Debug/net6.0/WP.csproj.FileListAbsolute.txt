@@ -861,3 +861,4 @@ C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\obj\Debug\net6.0\es-ES\WP.resour
 C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\bin\Debug\net6.0\ja-JP\WP.resources.dll
 C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\obj\Debug\net6.0\WP.Resources.SharedResource.ja-JP.resources
 C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\obj\Debug\net6.0\ja-JP\WP.resources.dll
+C:\Users\Aytug\source\repos\bekalhan\WebTech\WP\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll

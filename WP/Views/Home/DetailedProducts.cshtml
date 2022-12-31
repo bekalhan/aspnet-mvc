@@ -7,7 +7,7 @@
 
 <div class="container mt-5">
     <div class="row" style="">
-        <div class="col-6">
+        <div class="col-6" style="padding-right:10px">
             <div class="card" style="height:">
                 <img class="card-img-top" src="@Model.ShoppingCart.Product.Image" alt="Card image cap">
             </div>
@@ -145,22 +145,31 @@
             </div>
     </form>
 
-    @foreach (var item in Model.Product.ProductComments)
-    {
-        <div class="row" style="margin-top:40px;padding:3px;">
-            <div class="col-1 mt-4">
-                <img src="~/img/defaultavatar.png" style="width:40px;height:40px;" />
-            </div>
-            <div class="col-6" style="background-color:#eeeeee;border-radius:15px;margin-left:1em;padding:15px;">
-                @item.commentString
-            </div>
-            <div class="col-2 mt-3">
-                @item.User
-            </div>
-            <div class="col-2 mt-2">
-                @item.commentDate
-            </div>
-        </div>
-    }
+    @{
+       
+            foreach (var item in Model.Product.ProductComments)
+            {
+                <div class="row" style="margin-top:40px;padding:3px;">
+                    <div class="col-1 mt-4">
+                        <img src="~/img/defaultavatar.png" style="width:40px;height:40px;" />
+                    </div>
+                    <div class="col-6" style="background-color:#eeeeee;border-radius:15px;margin-left:1em;padding:15px;">
+                        @item.commentString
+                    </div>
+                    <div class="col-2 mt-3">
+                        @item.User
+                    </div>
+                    <div class="col-2 mt-2">
+                        @item.commentDate
+                    </div>
+                </div>
+            }
+        }
+          
+        
+    
+    
+    
+   
 
 </div>
